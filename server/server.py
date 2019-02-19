@@ -42,6 +42,9 @@ def build_app(conf):
 
     api = Api(app)
 
+    from resource.cate import CategoryView
+    api.add_resource(CategoryView, "/cate")
+
     return app
 
 if __name__ == "__main__":

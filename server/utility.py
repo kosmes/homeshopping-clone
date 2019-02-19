@@ -3,18 +3,18 @@ import datetime
 from models import Item, ShoppingMall, Category
 from models import db
 
-def CleanItem(item):
+def clean_item(item):
     res = {}
     for key, value in item.__dict__.items():
         if key == "mall":
             m = db.session.query(ShoppingMall)\
                     .filter(ShoppingMall.id == value).one_or_none()
-            res[key] = CleanObject(m)
+            res[key] = clean_object(m)
             continue
         elif key == "category":
             c = db.session.query(Category)\
                     .filter(Category.id == value).one_or_none()
-            res[key] = CleanObject(c)
+            res[key] = clean_object(c)
             continue
         elif key == "start_time":
             res["date"] = value.strftime("%Y%m%d")
@@ -26,13 +26,13 @@ def CleanItem(item):
 
     return res
 
-def CleanList(items):
+def clean_list(items):
     res = []
     for item in items:
-        res.append(CleanObject(item))
+        res.append(clean_object(item))
     return res
 
-def CleanObject(obj):
+def clean_object(obj):
     if obj is None:
         return {}
 
