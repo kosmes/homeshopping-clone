@@ -42,9 +42,13 @@ def build_app(conf):
 
     api = Api(app)
 
+    # add view to restful api
     from resource.cate import CategoryView
+    from resource.item import ItemView
     from resource.mall import ShoppingMallView
+
     api.add_resource(CategoryView, "/cate")
+    api.add_resource(ItemView, "/item/<ft>/<date>/<time>/<asc>")
     api.add_resource(ShoppingMallView, "/mall")
 
     return app
