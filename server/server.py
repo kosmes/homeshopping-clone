@@ -13,6 +13,7 @@ compress = Compress()
 
 class AttrDict(dict):
     """ Easy dictionary class """
+
     def __init__(self, *args, **kwargs):
         dict.__init__(self, *args, **kwargs)
         self.__dict__ = self

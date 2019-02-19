@@ -2,9 +2,6 @@ from datetime import datetime
 
 from server import db
 
-def init_db():
-    db.create_all()
-
 class ShoppingMall(db.Model):
     """Type of shopping malls"""
 
