@@ -1,0 +1,13 @@
+# general
+.idea
+.DS_Store
+
+# python
+venv
+
+# javascript
+client/logs/*
+client/!.gitkeep
+client/node_modules/
+client/app/lib/
+client/tmp
