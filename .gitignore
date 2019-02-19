@@ -4,6 +4,8 @@
 
 # python
 venv
+*.pyc
+server/migrations/
 
 # javascript
 client/logs/*
