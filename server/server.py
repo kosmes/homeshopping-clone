@@ -43,7 +43,9 @@ def build_app(conf):
     api = Api(app)
 
     from resource.cate import CategoryView
+    from resource.mall import ShoppingMallView
     api.add_resource(CategoryView, "/cate")
+    api.add_resource(ShoppingMallView, "/mall")
 
     return app
 
